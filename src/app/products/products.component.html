@@ -1,0 +1,13 @@
+<h1>Product Listing</h1>
+
+
+<div class="d-inline-flex gap-3">
+    <div *ngFor="let product of products" class="card" style="width:400px">
+        <img class="card-img-top img-max" src="{{product?.image}}" alt="{{product?.title}}">
+        <div class="card-body">
+            <h4 class="card-title">{{product?.title}}</h4>
+            <p class="card-text">{{product?.description}}</p>
+            <a href="#" class="btn btn-primary">Order now</a>
+        </div>
+    </div>
+</div>
