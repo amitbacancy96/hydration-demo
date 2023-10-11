@@ -1,11 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
+import { ShowConstraintsComponent } from './show-constraints/show-constraints.component';
+import { homeResolver } from './utilities/home.resolver';
 
 const routes: Routes = [
   {
+    path: 'home',
+    loadComponent: () => import('./home/home.component').then(m => m.HomeComponent),
+    resolve: { homeResolver }
+  },
+  {
+    path: 'products',
+    component: ProductsComponent,
+  }, {
+    path: 'constraints',
+    component: ShowConstraintsComponent
+  }, {
     path: '',
-    component: ProductsComponent
+    redirectTo: 'products',
+    pathMatch: 'full'
   }
 ];
 

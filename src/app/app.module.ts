@@ -4,11 +4,12 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
-
+import { ShowConstraintsComponent } from './show-constraints/show-constraints.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent
+    ProductsComponent,
+    ShowConstraintsComponent
   ],
   imports: [
     BrowserModule,

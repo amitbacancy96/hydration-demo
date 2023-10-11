@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
   products = [
     {
       "id": 10,
@@ -30,5 +31,15 @@ export class ProductsComponent {
         "count": 400
       }
     }
-  ]
+  ];
+
+  constructor(private seoService: SeoService) {
+    this.seoService.createCannonicalTag();
+  }
+
+  ngOnInit(): void {
+    this.seoService.setDocumentTitle('Products Page');
+    this.seoService.addMetaTag({ name: "description", content: 'List of must have tech gadgets' });
+    this.seoService.addMetaTag({ property: 'og:title', content: 'facebook-title for fb crawlers to list tech gadgets.' });
+  }
 }
