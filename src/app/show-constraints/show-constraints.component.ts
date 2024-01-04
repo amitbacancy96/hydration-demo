@@ -16,6 +16,9 @@ export class ShowConstraintsComponent implements OnInit, AfterViewInit {
     this.seoService.createCannonicalTag();
   }
   ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      // console.log(window.location)
+    }
     this.seoService.setDocumentTitle('Constraints Page');
     this.seoService.updateMetaTag({ name: "description", content: 'List of constraints in Angular 16 Hydration' });
     this.seoService.updateMetaTag({ property: 'og:title', content: 'fb-title for facebook crawling of hydration constraints.' });
@@ -41,6 +44,12 @@ export class ShowConstraintsComponent implements OnInit, AfterViewInit {
     img.src = 'https://picsum.photos/200/300';
     img.alt = 'testImg';
     div?.appendChild(img);
+  }
+
+  openConfig() {
+    const path = window.location.origin + '/common-config'
+    const myWindow = window.open('/common-config', "", "width=500,height=400");
+    console.log(myWindow);
   }
 
 }

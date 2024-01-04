@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { ShowConstraintsComponent } from './show-constraints/show-constraints.component';
 import { homeResolver } from './utilities/home.resolver';
+import { CommonConfigsComponent } from './config.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,9 @@ const routes: Routes = [
   }, {
     path: 'constraints',
     component: ShowConstraintsComponent
+  },{
+    path: 'common-config',
+    component: CommonConfigsComponent
   }, {
     path: '',
     redirectTo: 'products',

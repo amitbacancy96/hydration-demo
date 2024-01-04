@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { ShowConstraintsComponent } from './show-constraints/show-constraints.component';
+import { CommonConfigsComponent } from './config.component';
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    ShowConstraintsComponent
+    ShowConstraintsComponent,
+    CommonConfigsComponent
   ],
   imports: [
     BrowserModule,
